@@ -1,0 +1,316 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f1e8db;
+    color: #5a4f43;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #f1e8db;
+    padding: 20px 0;
+    border-bottom: 1px solid #d6cfc4;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #5a4f43;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3a2f25;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/acceuil/fondation-acceuil.jpg') center center/cover no-repeat;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: #f1e8db;
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* Featured Products */
+.featured-products {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.product {
+    max-width: 300px;
+}
+
+.product a {
+    text-decoration: none;
+}
+
+.product img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.product button {
+  background-color: #5a4f43;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #5a4f43;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #7a6f63;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    padding: 60px 0;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 600px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 2rem;
+}
+
+.about-text h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    margin-bottom: 50px;
+    color: #5a4f43;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.social-media h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.social-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-images img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.social-images img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #f1e8db;
+    padding: 40px 0;
+    border-top: 1px solid #d6cfc4;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-left p a {
+    color: #5a4f43;
+    text-decoration: underline;
+}
+
+.footer-center h4, .footer-right h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #3a2f25;
+    color: #f1e8db;
+    border: none;
+    padding: 20px 60px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    user-select: none;
+    margin-top: 70px;
+}
+
+.btn-primary:hover {
+    background-color: #5a4f43;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(90,79,67,0.4);
+}
+
+.image-réseaux h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.réseaux-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.réseaux img {
+    width: 400px;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    background-color: white;
+}
+
+.réseaux img:hover {
+    transform: scale(1.05);
+}
+
+.réseaux {
+    max-width: 510px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Image size recommendations for CSS usage:
+- Hero image: 1920x500 px (or wider for retina)
+- Product images: 200x200 px (circular crop)
+- About image: 400x400 px
+- Social media images: 180x180 px
+Use optimized JPEG or WebP formats for faster loading.
+*/

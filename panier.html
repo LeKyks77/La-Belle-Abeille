@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>À propos - La Belle Abeille</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="panier.css" />
+    </head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">La Belle Abeille</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#boutique">Boutique</a></li>
+                    <li><a href="about.html" class="active">À propos</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="#" class="lang-switch">Français</a></li>
+                    <li><a href="index.html#panier" class="cart">Panier</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+         <h1>Votre Panier 🛒</h1>
+    <a href="index.html">← Retour à la boutique</a>
+    </div>
+<main>
+    <ul id="cart-list"></ul>
+    <p>Total : <span id="cart-total">0</span> €</p>
+    <button onclick="clearCart()">Vider le panier</button>
+  </main>
+
+  <script>
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cart-list");
+    let total = 0;
+
+    cart.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.product} - ${item.price} €`;
+      cartList.appendChild(li);
+      total += item.price;
+    });
+
+    document.getElementById("cart-total").textContent = total.toFixed(2);
+
+    function clearCart() {
+      sessionStorage.removeItem("cart");
+      location.reload();
+    }
+  </script>
+
+        <section class="contact-form container">
+            <div>
+            <h2>Nous contacter</h2>
+            <p>Contactez-nous si besoin de plus d'information sue bkoifjgodjgiuregijhgierhgfufhbuebfzuifgzfzh</p>
+            <p>gbfuyzebfizfghzifuhbgfiuzbnfizefbzifgbzfihuzbefuzyfbofanjfoizahfofnfnb_èérhfnezf_èfunbikf</p>
+        </div>
+<div class="contact-form">
+    <form>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Prénom" required />
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom de famille</label>
+                <input type="text" id="nom" name="nom" placeholder="Nom de famille" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="E-mail" required />
+        </div>
+        <label class="checkbox-label">
+            <input type="checkbox" name="newsletter" />
+            S’inscrire pour recevoir nos actualités
+        </label>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <h1>La Belle Abeille</h1>
+                <p>Conçu avec <a href="https://www.apiculture77.fr/afapi/" target="_blank" rel="noopener noreferrer">AFAPI</a></p>
+            </div>
+            <div class="footer-center">
+                <h4>Localisation</h4>
+                <p>234 rue des Bibarnoux<br />Mouroux, 77120</p>
+            </div>
+            <div class="footer-right" id="contact">
+                <h4>Contact</h4>
+                <p>afapi77@gmail.com<br />55 55 55 55 55</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
