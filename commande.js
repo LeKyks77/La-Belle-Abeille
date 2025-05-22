@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const order = { numero, date, nom, prenom, tel, email, panier, total };
 
-    generateLocalTicket(order); // ✅ Créer le fichier ticket
-    sendTicketEmail(order);     // ✅ Envoyer l’email
+    generateLocalTicket(order);  // ✅ Enregistre le ticket localement
+    sendTicketEmail(order);      // ✅ Envoie par EmailJS
 
     sessionStorage.setItem("lastOrder", JSON.stringify(order));
     sessionStorage.removeItem("cart");
@@ -40,7 +40,7 @@ ${order.panier.map(p => `- ${p.product} : ${p.price} €`).join('\n')}
 
 Total : ${order.total} €
 Note : Paiement sur place, retrait uniquement.
-`;
+  `;
 
   const blob = new Blob([ticketText], { type: "text/plain;charset=utf-8" });
   const link = document.createElement("a");
@@ -50,18 +50,23 @@ Note : Paiement sur place, retrait uniquement.
 }
 
 function sendTicketEmail(order) {
+  // ✅ Formater les produits dans le format EmailJS (boucle #orders)
+  const orders = order.panier.map(p => ({
+    name: p.product,
+    price: p.price,
+    units: 1 // à ajuster si tu ajoutes la quantité plus tard
+  }));
+
   const params = {
-    order_number: order.numero,
+    order_id: order.numero,
     order_date: order.date,
     nom: order.nom,
     prenom: order.prenom,
     tel: order.tel,
     email: order.email,
-    total: order.total,
-    panier: order.panier // ← tableau d’objets { product, price }
+    "cost.total": order.total,
+    orders: orders // ⬅️ très important pour boucle #orders
   };
-
-  console.log("📤 Données envoyées à EmailJS :", params);
 
   emailjs.send("service_fu0xtjq", "template_pxshcbg", params)
     .then(() => {
