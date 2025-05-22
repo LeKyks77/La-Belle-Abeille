@@ -50,13 +50,6 @@ Note : Paiement sur place, retrait uniquement.
 }
 
 function sendTicketEmail(order) {
-  // ✅ Formater les produits dans le format EmailJS (boucle #orders)
-  const orders = order.panier.map(p => ({
-    name: p.product,
-    price: p.price,
-    units: 1 // à ajuster si tu ajoutes la quantité plus tard
-  }));
-
   const params = {
     order_id: order.numero,
     order_date: order.date,
@@ -64,9 +57,17 @@ function sendTicketEmail(order) {
     prenom: order.prenom,
     tel: order.tel,
     email: order.email,
-    "cost.total": order.total,
-    orders: orders // ⬅️ très important pour boucle #orders
+    cost: {
+      total: order.total.toFixed(2) // ← affiché comme {{cost.total}} dans le template
+    },
+    orders: order.panier.map(p => ({
+      name: p.product,
+      price: p.price.toFixed(2), // affiché comme {{price}} dans le template
+      units: p.units || 1         // tu peux adapter selon les données réelles
+    }))
   };
+
+  console.log("📤 Données envoyées à EmailJS :", params);
 
   emailjs.send("service_fu0xtjq", "template_pxshcbg", params)
     .then(() => {
