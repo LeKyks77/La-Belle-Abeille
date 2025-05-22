@@ -5,10 +5,10 @@
   <title>Finaliser la commande</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="commande.js"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("qJDHtfj1dZmTrA20t"); // Remplace par ta clé publique
+    emailjs.init("lr1QaqEZq3-Iwzeme"); // Remplace par ta clé publique
   })();
 </script>
 
@@ -25,5 +25,6 @@
   <button type="submit">Commander</button>
 </form>
   </main>
+  <button onclick="sendTest()">Test EmailJS</button>
 </body>
 </html>
