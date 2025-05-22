@@ -32,6 +32,21 @@
     color: #5a4f43;
 }
 
+.commander-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #5a4f43;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.commander-btn:hover {
+  background-color: #7a6f63;
+}
+
 /* Contact form */
 .contact-form {
     max-width: 100%;

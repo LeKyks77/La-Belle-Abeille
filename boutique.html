@@ -10,7 +10,7 @@
 </head>
     <header>
         <div class="container header-container">
-            <div class="logo">La Belle Abeille</div>
+            <div class="logo"><a href="index.html">La Belle Abeille</div></a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="boutique.html">Boutique</a></li>
@@ -22,6 +22,47 @@
             </nav>
         </div>
     </header>
+    <div class="titre">
+        <h2>Boutique</h2>
+    </div>
+<!-- Bouton pour afficher/masquer les filtres -->
+<button id="filter-toggle">Filtres</button>
+
+<!-- Panneau de filtres -->
+<div id="filters" class="filters">
+  <label>
+    Prix :
+    <select id="price-filter">
+      <option value="">Tous</option>
+      <option value="low">Moins de 20€</option>
+      <option value="mid">20€ - 50€</option>
+      <option value="high">Plus de 50€</option>
+    </select>
+  </label>
+
+  <label>
+    Couleur :
+    <select id="color-filter">
+      <option value="">Toutes</option>
+      <option value="jaune">Jaune</option>
+      <option value="blanc">Blanc</option>
+      <option value="miel">Miel</option>
+    </select>
+  </label>
+
+  <label>
+    Catégorie :
+    <select id="category-filter">
+      <option value="">Toutes</option>
+      <option value="cierge">Cierge</option>
+      <option value="cube">Cube</option>
+      <option value="bougie">Bougie</option>
+      <option value="bougie">Caisse</option>
+    </select>
+  </label>
+
+  <button id="reset-filters">Réinitialiser</button>
+</div>
 
 <script>
   function addToCart(product, price) {
@@ -34,31 +75,54 @@
 
     <main>
         <section class="featured-products">
-            <h2>Boutique</h2>
             <div class="products-container">
-                <div class="product">
+                <div class="product" data-price="6" data-color="jaune" data-category="bougie">
                     <img src="images/produit/bougie-alveole.jpg" alt="Bougie en cire alvéolé" />
                     <a href="#" class="product-name">Bougie en cire alvéolé</a>
                     <p class="price">6 €</p>
                     <button onclick="addToCart('Bougie en cire alvéolé', 6)">Ajouter au panier</button>
                 </div>
-                <div class="product">
+                <div class="product" data-price="8" data-color="jaune" data-category="bougie cube">
                     <img src="images/produit/bougie-cube.jpg" alt="Bougie cube en cire alvéolé" />
                     <a href="#" class="product-name">Bougie cube en cire alvéolé</a>
                     <p class="price">8 €</p>
                     <button onclick="addToCart('Bougie cube en cire alvéolé', 8)">Ajouter au panier</button>
                 </div>
-                <div class="product">
+                <div class="product" data-price="6" data-color="jaune" data-category="bougie cierge">
                     <img src="images/produit/cierge2.webp" alt="Cierge en cire" />
                     <a href="#" class="product-name">Cierge en cire</a>
                     <p class="price">4 €</p>
                     <button onclick="addToCart('Cierge en cire', 4)">Ajouter au panier</button>
                 </div>
-                <div class="product">
-                    <img src="images/produit/cierge1.jpeg" alt="Cierge artisanal" />
-                    <a href="#" class="product-name">Cierge artisanal</a>
+                <div class="product" data-price="5" data-color="blanc" data-category="caisse cube">
+                    <img src="images/produit/caisse.png" alt="Cierge artisanal" />
+                    <a href="#" class="product-name">Produit</a>
                     <p class="price">5 €</p>
-                    <button onclick="addToCart('Cierge artisanal', 5)">Ajouter au panier</button>
+                    <button onclick="addToCart('Produit', 5)">Ajouter au panier</button>
+                </div>
+                <div class="product" data-price="5" data-color="blanc" data-category="caisse cube">
+                    <img src="images/produit/caisse.png" alt="Cierge artisanal" />
+                    <a href="#" class="product-name">Produit</a>
+                    <p class="price">5 €</p>
+                    <button onclick="addToCart('Produit', 5)">Ajouter au panier</button>
+                </div>
+                <div class="product" data-price="5" data-color="blanc" data-category="caisse cube">
+                    <img src="images/produit/caisse.png" alt="Cierge artisanal" />
+                    <a href="#" class="product-name">Produit</a>
+                    <p class="price">5 €</p>
+                    <button onclick="addToCart('Produit', 5)">Ajouter au panier</button>
+                </div>
+                <div class="product" data-price="5" data-color="blanc" data-category="caisse cube">
+                    <img src="images/produit/caisse.png" alt="Cierge artisanal" />
+                    <a href="#" class="product-name">Produit</a>
+                    <p class="price">5 €</p>
+                    <button onclick="addToCart('Produit', 5)">Ajouter au panier</button>
+                </div>
+                <div class="product" data-price="5" data-color="blanc" data-category="caisse cube">
+                    <img src="images/produit/caisse.png" alt="Cierge artisanal" />
+                    <a href="#" class="product-name">Produit</a>
+                    <p class="price">5 €</p>
+                    <button onclick="addToCart('Produit', 5)">Ajouter au panier</button>
                 </div>
             </div>
         </section>
@@ -80,5 +144,6 @@
             </div>
         </div>
     </footer>
+<script src="filtre.js"></script>
 </body>
 </html>

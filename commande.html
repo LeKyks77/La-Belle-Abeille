@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Finaliser la commande</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="commande.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("qJDHtfj1dZmTrA20t"); // Remplace par ta clé publique
+  })();
+</script>
+
+</head>
+<body>
+  <main class="commande-page">
+    <h1>Finaliser ma commande</h1>
+    <form id="commande-form">
+  <input type="text" name="prenom" placeholder="Prénom" required />
+  <input type="text" name="nom" placeholder="Nom" required />
+  <input type="tel" name="tel" placeholder="Téléphone" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <p><strong>⚠️ Aucun envoi possible. Retrait uniquement.</strong></p>
+  <button type="submit">Commander</button>
+</form>
+  </main>
+</body>
+</html>
